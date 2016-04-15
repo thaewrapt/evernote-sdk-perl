@@ -13,7 +13,7 @@ use Exception::Class (
     'EDAMTest::Exception::FileIOError',
 );
 
-use LWP::Protocol::https; # it is not needed to 'use' here, but it must be installed.
+require LWP::Protocol::https; # it is not needed to 'use' here, but it must be installed.
         # if it is not installed, an error (Thrift::TException object) is to be thrown.
 use Thrift::HttpClient;
 use Thrift::BinaryProtocol;
