@@ -27,6 +27,8 @@ use EDAMUserStore::Constants;
 # purpose of exploring the API, you can get a developer token that allows
 # you to access your own Evernote account. To get a developer token, visit
 # https://sandbox.evernote.com/api/DeveloperToken.action
+
+# TODO: Get it from some kind of configuration.
 my $auth_token = 'your developer token';
 
 if ( $auth_token eq 'your developer token' ) {
