@@ -15,15 +15,6 @@ use Exception::Class (
   'EDAMTest::Exception::FileIOError',
 );
 
-sub get_config {
-  use YAML::XS qw(LoadFile);
-  my $config_filename = 'EDAMTest.yml';
-
-  my $config = LoadFile($config_filename);
-
-  return $config;
-}
-
 require LWP::Protocol::https; # it is not needed to 'use' here, but it must be installed.
         # if it is not installed, an error (Thrift::TException object) is to be thrown.
 
@@ -34,6 +25,16 @@ use EDAMErrors::Types; # before doing `use' EDAMUserStore::UserStore or EDAMNote
 use EDAMUserStore::UserStore;
 use EDAMNoteStore::NoteStore;
 use EDAMUserStore::Constants;
+
+# get_config: does what the name says, i.e. loads script-specific settings from YAML-file
+sub get_config {
+  use YAML::XS qw(LoadFile);
+  my $config_filename = 'EDAMTest.yml';
+
+  my $config = LoadFile($config_filename);
+
+  return $config;
+}
 
 my $empty_auth_token = 'your own developer token';
 
